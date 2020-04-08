@@ -4,6 +4,9 @@ import router from "./router";
 import store from "./store";
 
 import './includes/bootstrap';
+import './includes/vuelidate';
+import './includes/loading';
+import './includes/toasted';
 
 Vue.config.productionTip = false;
 

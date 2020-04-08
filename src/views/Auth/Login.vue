@@ -1,12 +1,12 @@
 <template>
     <Content>
       <img src="@/assets/logo.png" alt="logo" />
-      <form >
+      <form @submit.prevent="submit">
         <input v-model="pet.email" placeholder="Email" />
-        <span class="mb-2">Error</span>
+        <span v-if="submitted && $v.pet.email.$invalid" class="mb-2" v-text="getError($v.pet.email)"></span>
         <input type="password" v-model="pet.password" placeholder="Senha" />
-        <span class="mb-2">Error</span>
-        <button>Entrar</button>
+        <span v-if="submitted && $v.pet.password.$invalid" class="mb-2" v-text="getError($v.pet.password)"></span>
+        <button type="submit">Entrar</button>
       </form>
       <router-link tag="a" to="/register" class="link" >Cadastre-se</router-link>
     </Content>
@@ -15,6 +15,8 @@
 <script>
 import { Content } from './styles';
 import http from '../../services/api';
+import { required, email } from "vuelidate/lib/validators";
+import { validationMsgs } from '@/utils/validation_msg.js';
 export default {
     name: 'Login',
     components: {
@@ -22,22 +24,45 @@ export default {
     },
     data(){
       return {
+        submitted: false,
         pet: {
 
         },
       }
     },
+    validations(){
+      return {
+        pet: {
+          email: { required, email },
+          password: { required }
+        }
+      }
+    },
     methods: {
+      submit() {
+        this.submitted = true;
+        this.$v.$touch();
+        if (this.$v.$invalid) {
+          return;
+        }
+        this.submitted = false;
+        this.login();
+      },
       async login(){
         let loader = this.$loading.show();
         try{
           await http.post('/login', this.pet);
         }catch(err){
-          window.console.log(err.response.data);
+          this.$toasted.global.error({msg: err.response.data.error || 'Error ao se comunicar com servidor'});
         }finally{
           loader.hide();
         }
-      }
+      },
+      getError(value){
+        if(value){
+          return validationMsgs(value);
+        }
+      },
     }
 }
 </script>
