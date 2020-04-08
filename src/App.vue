@@ -25,7 +25,7 @@ body {
 body,
 input,
 button {
-  font: 14px "Roboto", sans-serif;
+  font-family: 'Lato', sans-serif !important;
 }
 a {
   text-decoration: none;
