@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import AuthLayout from "@/views/Auth/AuthLayout.vue";
 import DashboardLayout from '../views/Dashboard/DashboardLayout.vue';
+import { authGuard, noAuthGuard } from './guards/guards';
 
 Vue.use(VueRouter);
 
@@ -14,11 +15,13 @@ const routes = [
       {
         path: '',
         name: 'login',
+        beforeEnter: authGuard,
         component: () => import( "../views/Auth/Login.vue")
       },
       {
         path: 'register',
         name: 'register',
+        beforeEnter: authGuard,
         component: () => import( "../views/Auth/Register.vue")
       }
     ]
@@ -27,6 +30,7 @@ const routes = [
   {
     path: "/",
     name: "home",
+    beforeEnter: noAuthGuard,
     component: DashboardLayout,
     children: [
       {

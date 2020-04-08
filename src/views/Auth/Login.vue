@@ -51,7 +51,9 @@ export default {
       async login(){
         let loader = this.$loading.show();
         try{
-          await http.post('/login', this.pet);
+          const res = await http.post('/login', this.pet);
+          console.log(res)
+          this.$store.dispatch('SET_AUTH', res.data);
           this.$router.replace({name: 'home'});
         }catch(err){
           this.$toasted.global.error({msg: err.response.data.error || 'Error ao se comunicar com servidor'});

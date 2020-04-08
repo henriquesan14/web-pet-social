@@ -6,20 +6,21 @@
         <input type="text" placeholder="Pesquise aqui...">
         <ul>
           <li>
-            Solicitações
+            <font-awesome-icon icon="user-friends" />
           </li>
           <li>
-            Amizades
+            <font-awesome-icon icon="comments" />
           </li>
           <li>
-            Conversas
+            <font-awesome-icon icon="bell" />
           </li>
         </ul>
       </div>
       
       <div class="profile-bar">
-        <span>Garfield</span>
+        <span>{{userName}}</span>
         <img src="https://statig1.akamaized.net/bancodeimagens/71/n7/7f/71n77fjiwo437zctuazsc6ob0.jpg" alt="avatar">
+        <font-awesome-icon icon="sort-down" />
       </div>
     </Header>
     <router-view></router-view>
@@ -27,12 +28,14 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import { Header } from "./styles";
 export default {
   name: "DashboardLayout",
   components: {
     Header
-  }
+  },
+  computed: mapGetters(['userName'])
 };
 </script>
 

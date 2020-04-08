@@ -25,7 +25,7 @@ export const Header = styled.div`
             border: 0;
             border-radius: 4px;
             height: 40px;
-            padding: 0 15px;
+            padding: 0 80px 0 10px;
             color: #fff;
             &::placeholder{
                 color: rgba(255,255,255,0.7);
@@ -57,15 +57,20 @@ export const Header = styled.div`
     }
 
     div.profile-bar{
+        cursor: pointer;
+        height:100%;
+        padding:0 5px;
+        border-radius: 5px;
         display: flex;
         align-items: center;
-        
-        span {
-            color: #fff;
-            margin-right: 10px;
+        color : #fff;
+
+        &:hover{
+            background-color: rgba(0,0,0,.4); 
         }
 
         img{
+            margin: 0 8px;
             width: 40px;
             height: 40px;
             border-radius: 20px;

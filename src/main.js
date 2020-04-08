@@ -3,10 +3,12 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 
+//libs
 import './includes/bootstrap';
 import './includes/vuelidate';
 import './includes/loading';
 import './includes/toasted';
+import './includes/fontawesome';
 
 Vue.config.productionTip = false;
 
