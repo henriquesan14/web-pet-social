@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import AuthLayout from "@/views/Auth/AuthLayout.vue";
+import DashboardLayout from '../views/Dashboard/DashboardLayout.vue';
 
 Vue.use(VueRouter);
 
@@ -22,6 +23,18 @@ const routes = [
       }
     ]
     
+  },
+  {
+    path: "/",
+    name: "home",
+    component: DashboardLayout,
+    children: [
+      {
+        path: 'timeline',
+        name: 'timeline',
+        component: () => import('../views/Dashboard/Timeline/Timeline.vue')
+      }
+    ]
   }
 ];
 

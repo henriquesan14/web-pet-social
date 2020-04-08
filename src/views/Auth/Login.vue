@@ -52,6 +52,7 @@ export default {
         let loader = this.$loading.show();
         try{
           await http.post('/login', this.pet);
+          this.$router.replace({name: 'home'});
         }catch(err){
           this.$toasted.global.error({msg: err.response.data.error || 'Error ao se comunicar com servidor'});
         }finally{
