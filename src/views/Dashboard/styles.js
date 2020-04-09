@@ -56,17 +56,52 @@ export const Header = styled.div`
         }
     }
 
-    div.profile-bar{
+    div.user-dropdown{
         cursor: pointer;
         height:100%;
-        padding:0 5px;
         border-radius: 5px;
-        display: flex;
-        align-items: center;
         color : #fff;
 
         &:hover{
             background-color: rgba(0,0,0,.4); 
+        }
+
+        .user-button{
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 0 20px;
+        }
+
+        .user-dropdown-content{
+            position: absolute;
+            min-width: 162px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.5s linear;
+
+            a {
+                font-size: 0.9rem;
+                text-decoration: none;
+                color: #000;
+                padding: 10px;
+                &:hover {
+                background-color: #ededed;
+                text-decoration: none;
+                color: #000;
+                }
+            }
+        }
+
+        &:hover .user-dropdown-content{
+            visibility: visible;
+            opacity: 1;
         }
 
         img{

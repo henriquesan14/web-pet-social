@@ -17,10 +17,22 @@
         </ul>
       </div>
       
-      <div class="profile-bar">
-        <span>{{userName}}</span>
-        <img src="https://statig1.akamaized.net/bancodeimagens/71/n7/7f/71n77fjiwo437zctuazsc6ob0.jpg" alt="avatar">
-        <font-awesome-icon icon="sort-down" />
+      <div class="user-dropdown">
+        <div class="user-button">
+          <span>{{capitalization(userName)}}</span>
+          <img src="https://statig1.akamaized.net/bancodeimagens/71/n7/7f/71n77fjiwo437zctuazsc6ob0.jpg" alt="avatar">
+          <font-awesome-icon icon="sort-down" />
+        </div>
+
+        <div class="user-dropdown-content">
+          <router-link to="/dashboard/usuarios">
+            <i class="fa fa-cogs"></i>Perfil
+          </router-link>
+          <a @click.prevent="logout">
+            <i class="fa fa-sign-out"></i>Sair
+          </a>
+        </div>
+
       </div>
     </Header>
     <router-view></router-view>
@@ -35,7 +47,18 @@ export default {
   components: {
     Header
   },
-  computed: mapGetters(['userName'])
+  computed: mapGetters(['userName']),
+  methods: {
+    logout(){
+      this.$store.dispatch('RESET_AUTH');
+      this.$router.replace({ name: 'login'});
+    },
+    capitalization(value){
+      if(value){
+        return value.substring(0,1).toUpperCase().concat(value.substring(1));
+      }
+    }
+  }
 };
 </script>
 
