@@ -5,7 +5,7 @@ import 'vue-loading-overlay/dist/vue-loading.css';
 
 Vue.use(Loading, {
     color: '#1250a6',
-    loader: 'spinner',
+    loader: 'bars',
     width: 60,
     height: 60
   },{

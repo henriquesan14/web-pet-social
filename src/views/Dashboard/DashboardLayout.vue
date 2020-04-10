@@ -20,7 +20,7 @@
       <div class="user-dropdown">
         <div class="user-button">
           <span>{{capitalization(userName)}}</span>
-          <img src="https://statig1.akamaized.net/bancodeimagens/71/n7/7f/71n77fjiwo437zctuazsc6ob0.jpg" alt="avatar">
+          <img src="https://avatars-provider.s3-sa-east-1.amazonaws.com/files-pet-social/logo_bg_blue.png" alt="avatar">
           <font-awesome-icon icon="sort-down" />
         </div>
 

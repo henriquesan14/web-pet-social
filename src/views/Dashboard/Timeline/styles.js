@@ -67,3 +67,74 @@ export const NewPost = styled.div`
     }
 
 `;
+
+export const Post = styled.div`
+    width: 600px;
+    border: 1px solid #c2c2c2;
+    margin-bottom: 15px;
+
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        padding: 10px;
+
+        .desc-user{
+            display:flex;
+            align-items:center
+        }
+
+        img{
+            width: 40px;
+            height: 40px;
+            border-radius: 25px;
+            margin-right: 10px;
+            border: 2px solid #1250a6;
+        }
+
+        h5{
+            font-size: 16px;
+        }
+    }
+
+    .content{
+        display: flex;
+
+        img{
+            width: 100%;
+        }
+
+
+    }
+
+    .footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5px;
+
+        span{
+            margin-bottom: 5px;
+        }
+
+        ul{
+            display: flex;
+            align-items: center;
+
+            li{
+                svg{
+                    cursor: pointer;
+                    font-size: 30px;
+                }
+
+                &:first-child{
+                    margin-right: 30px;
+                }
+            }
+        }
+
+
+    }
+
+`;
