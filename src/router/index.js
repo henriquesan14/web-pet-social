@@ -37,6 +37,16 @@ const routes = [
         path: 'timeline',
         name: 'timeline',
         component: () => import('../views/Dashboard/Timeline/Timeline.vue')
+      },
+      {
+        path: 'profile',
+        name: 'profile',
+        component: () => import('../views/Dashboard/Profile/Profile.vue')
+      },
+      {
+        path: 'updatepassword',
+        name: 'update-password',
+        component: () => import('../views/Dashboard/UpdatePassword/UpdatePassword.vue')
       }
     ]
   }

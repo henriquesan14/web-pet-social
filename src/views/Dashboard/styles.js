@@ -18,6 +18,7 @@ export const Header = styled.div`
             width: 35px;
             height: 35px;
             margin-right: 10px;
+            cursor: pointer;
         }
 
         input {
@@ -74,10 +75,10 @@ export const Header = styled.div`
         }
 
         .user-dropdown-content{
+            background-color: #fff;
             position: absolute;
             min-width: 162px;
             box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            padding: 10px;
             z-index: 1;
             display: flex;
             flex-direction: column;
@@ -91,10 +92,23 @@ export const Header = styled.div`
                 text-decoration: none;
                 color: #000;
                 padding: 10px;
+
+                svg{
+                    margin-right: 5px;
+                }
+                
                 &:hover {
-                background-color: #ededed;
-                text-decoration: none;
-                color: #000;
+                    background-color: #1250a6;
+                    text-decoration: none;
+                    color: #000;
+
+                    span{
+                        color: #fff;
+                    }
+
+                    svg{
+                        color: #fff;
+                    }
                 }
             }
         }
@@ -120,4 +134,5 @@ export const Content = styled.div`
     padding: 20px;
     display: flex;
     justify-content: center;
+    background-color: #e4e5e6;
 `;

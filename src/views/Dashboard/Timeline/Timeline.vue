@@ -57,7 +57,6 @@ export default {
             try{
                 const res = await http.get('/posts');
                 this.posts = res.data.rows;
-                console.log(res);
             }catch(err){
                 console.log(err.response.data)
             }
@@ -93,6 +92,7 @@ export default {
 
 <style>
     .timeline{
+        width: 600px;
         display: flex;
         flex-direction: column;
     }

@@ -4,6 +4,7 @@ export const NewPost = styled.div`
     border: 1px solid #c2c2c2;
     margin-bottom: 10px;
     padding: 5px;
+    background-color: #fff;
     div.bar-legenda {
         display: flex;
         
@@ -69,9 +70,10 @@ export const NewPost = styled.div`
 `;
 
 export const Post = styled.div`
-    width: 600px;
+    width: 100%;
     border: 1px solid #c2c2c2;
     margin-bottom: 15px;
+    background-color: #fff;
 
     .header{
         display: flex;

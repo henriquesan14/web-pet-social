@@ -20,6 +20,7 @@ export const Content = styled.div`
             opacity: 0.8;
             text-align: center;
             &:hover{
+                color: #c2c2c2;
                 opacity: 1;
             }
         }

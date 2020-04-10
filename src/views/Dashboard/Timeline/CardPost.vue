@@ -3,7 +3,7 @@
     <div class="header">
       <div class="desc-user">
         <img
-          :src="post.pet.avatar || 'https://avatars-provider.s3-sa-east-1.amazonaws.com/files-pet-social/logo_bg_blue.png'"
+          :src="avatar(post)"
           alt
         />
         <h5>{{post.pet.firstName}}</h5>
@@ -51,6 +51,12 @@ export default {
         locale: pt,
         addSufix: true
       });
+    },
+    avatar(post){
+      if(!post.pet.avatar){
+        return 'https://avatars-provider.s3-sa-east-1.amazonaws.com/files-pet-social/logo_bg_blue.png'
+      }
+      return post.pet.avatar.path;
     }
   }
 };
