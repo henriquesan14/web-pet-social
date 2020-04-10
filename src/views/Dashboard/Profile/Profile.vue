@@ -41,7 +41,7 @@ export default {
     },
     computed: mapGetters(['getUser', 'userAvatar']),
     mounted(){
-        this.pet = this.getUser;
+        this.pet = {...this.getUser};
     },
     data(){
         return {
