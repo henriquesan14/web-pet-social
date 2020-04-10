@@ -3,8 +3,8 @@
     <Header>
       <div class="search-bar">
         <img @click="$router.push({name: 'timeline'});" src="../../assets/logo.png" alt="">
-        <input type="text" placeholder="Pesquise aqui...">
-        <ul>
+        <BarSearchPet></BarSearchPet>
+        <ul class="icons-bar">
           <li>
             <font-awesome-icon icon="user-friends" />
           </li>
@@ -51,11 +51,13 @@
 <script>
 import { mapGetters } from 'vuex';
 import { Header, Content } from "./styles";
+import BarSearchPet from './BarSearchPet';
 export default {
   name: "DashboardLayout",
   components: {
     Header,
-    Content
+    Content,
+    BarSearchPet
   },
   computed: mapGetters(['auth', 'userAvatar', 'userName']),
   methods: {

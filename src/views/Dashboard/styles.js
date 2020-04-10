@@ -21,19 +21,7 @@ export const Header = styled.div`
             cursor: pointer;
         }
 
-        input {
-            background: rgba(0,0,0,0.1);
-            border: 0;
-            border-radius: 4px;
-            height: 40px;
-            padding: 0 80px 0 10px;
-            color: #fff;
-            &::placeholder{
-                color: rgba(255,255,255,0.7);
-            }
-        }
-
-        ul {
+        ul.icons-bar {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -135,4 +123,58 @@ export const Content = styled.div`
     display: flex;
     justify-content: center;
     background-color: #e4e5e6;
+`;
+
+export const Autocomplete = styled.div`
+    input {
+        background: rgba(0,0,0,0.1);
+        border: 0;
+        border-radius: 4px;
+        height: 40px;
+        width: 300px;
+        padding: 0 10px 0 10px;
+        color: #fff;
+        &::placeholder{
+            color: rgba(255,255,255,0.7);
+        }
+    }
+
+    ul{
+        background-color: white;
+        position: absolute;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        display:flex;
+        flex-direction: column;
+        align-items: stretch;
+        width:300px;
+
+        li{
+            cursor: pointer;
+            color: black;
+            margin:0;
+            border-radius: 0;
+            padding: 10px;
+
+            img{
+                width: 30px;
+                height: 30px;
+                border-radius: 15px;
+                border: 1px solid #fff;
+            }
+
+            &:hover{
+                background-color: #1250a6;
+
+                span{
+                    color: #fff;
+                }
+            }
+            
+        }
+
+        span{
+            padding: 10px;
+        }
+    }
 `;

@@ -47,6 +47,11 @@ const routes = [
         path: 'updatepassword',
         name: 'update-password',
         component: () => import('../views/Dashboard/UpdatePassword/UpdatePassword.vue')
+      },
+      {
+        path: 'pet/:id',
+        name: 'profile-pet',
+        component: () => import('../views/Dashboard/ProfilePet/ProfilePet.vue')
       }
     ]
   }
