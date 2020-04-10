@@ -32,6 +32,7 @@ a {
 }
 ul {
   list-style: none;
+  margin: 0 !important;
 }
 button {
   cursor: pointer;

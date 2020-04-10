@@ -35,17 +35,20 @@
 
       </div>
     </Header>
-    <router-view></router-view>
+    <Content>
+      <router-view></router-view>
+    </Content>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
-import { Header } from "./styles";
+import { Header, Content } from "./styles";
 export default {
   name: "DashboardLayout",
   components: {
-    Header
+    Header,
+    Content
   },
   computed: mapGetters(['userName']),
   methods: {

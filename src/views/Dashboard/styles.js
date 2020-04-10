@@ -113,3 +113,10 @@ export const Header = styled.div`
     }
 
 `;
+
+
+export const Content = styled.div`
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+`;
