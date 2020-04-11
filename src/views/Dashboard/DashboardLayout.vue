@@ -5,13 +5,13 @@
         <img @click="$router.push({name: 'timeline'});" src="../../assets/logo.png" alt="">
         <BarSearchPet></BarSearchPet>
         <ul class="icons-bar">
-          <li>
+          <li @click="navigate('amizades')">
             <font-awesome-icon icon="user-friends" />
           </li>
-          <li>
+          <li @click="navigate('amizades')">
             <font-awesome-icon icon="comments" />
           </li>
-          <li>
+          <li @click="navigate('amizades')">
             <font-awesome-icon icon="bell" />
           </li>
         </ul>
@@ -72,6 +72,9 @@ export default {
     },
     getAvatar(){
       this.auth.avatar ? this.auth.avatar.path : '';
+    },
+    navigate(name){
+      this.$router.push({name});
     }
   }
 };

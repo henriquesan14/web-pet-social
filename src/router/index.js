@@ -53,6 +53,11 @@ const routes = [
         name: 'profile-pet',
         props: true,
         component: () => import('../views/Dashboard/ProfilePet/ProfilePet.vue')
+      },
+      {
+        path: 'amizades',
+        name: 'amizades',
+        component: () => import('../views/Dashboard/Amizades/Amizades.vue')
       }
     ]
   }
