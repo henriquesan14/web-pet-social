@@ -1,6 +1,6 @@
 <template>
   <Autocomplete id="autocomplete-bar">
-    <input v-model="nome" @keyup="onChangePet" type="search" placeholder="Pesquise aqui..." />   
+    <input @focus="onChangePet" v-model="nome" @keyup="onChangePet" type="search" placeholder="Pesquise aqui..." />   
     <ul v-if="dropdownVisible">
       <li @click="navigateToPet(pet.id)" v-for="pet in pets" :key="pet.id">
         <img
