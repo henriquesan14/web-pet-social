@@ -17,7 +17,11 @@
             </div>
             <button @click="uploadImage" :disabled="!newPost.legenda || !image">Publicar</button>
         </NewPost>
-        <CardPost :post="post" v-for="post in posts" :key="post.id"></CardPost>
+        <div v-if="!loading">
+            <CardPost :post="post" v-for="post in posts" :key="post.id"></CardPost>
+        </div>
+        <h5 class="text-center">Nenhuma publicação...</h5>
+        <Loading :loader="loading"/>
     </div>
 </template>
 
@@ -25,14 +29,17 @@
 import { NewPost } from './styles';
 import CardPost from './CardPost';
 import http from '../../../services/api';
+import Loading from '@/components/Loading.vue';
 export default {
     name: 'Timeline',
     components: {
         NewPost,
-        CardPost
+        CardPost,
+        Loading
     },
     data(){
         return {
+            loading: true,
             newPost: { 
             },
             url: null,
@@ -42,7 +49,7 @@ export default {
             ]
         }
     },
-    mounted(){
+    async mounted(){
         this.getPosts();
     },
     methods: {
@@ -58,7 +65,9 @@ export default {
                 const res = await http.get('/posts');
                 this.posts = res.data.rows;
             }catch(err){
-                console.log(err.response.data)
+                this.$toasted.global.error({msg: 'Erro ao carregar posts'});
+            }finally{
+                this.loading = false;
             }
         },
         async uploadImage(){
@@ -92,7 +101,7 @@ export default {
 
 <style>
     .timeline{
-        width: 600px;
+        width: 700px;
         display: flex;
         flex-direction: column;
     }

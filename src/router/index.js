@@ -51,6 +51,7 @@ const routes = [
       {
         path: 'pet/:id',
         name: 'profile-pet',
+        props: true,
         component: () => import('../views/Dashboard/ProfilePet/ProfilePet.vue')
       }
     ]

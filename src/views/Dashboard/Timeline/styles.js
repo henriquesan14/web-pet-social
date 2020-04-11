@@ -13,7 +13,8 @@ export const NewPost = styled.div`
             margin: 0 15px 0 0;
             width: 50px;
             height: 50px;
-            border-radius: 25px;
+            border-radius: 30px;
+            border: 2px solid #1250a6;
         }
         input {
             width: 100%;

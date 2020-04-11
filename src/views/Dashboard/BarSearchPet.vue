@@ -58,6 +58,7 @@ export default {
         }
       },
       navigateToPet(id){
+        this.dropdownVisible = false;
         this.$router.push({name: 'profile-pet', params: {
           id
         }});

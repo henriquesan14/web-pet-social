@@ -16,6 +16,7 @@ export const ContentProfile = styled.div`
             height: 150px;
             border-radius: 75px;
             margin-bottom: 15px;
+            border: 2px solid #1250a6;
             cursor: pointer;
         }
 
