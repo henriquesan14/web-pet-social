@@ -15,7 +15,8 @@ import {
     faVenus,
     faUserPlus,
     faUserTimes,
-    faUserCheck
+    faUserCheck,
+    faPaperPlane
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
@@ -35,6 +36,7 @@ library.add(faVenus)
 library.add(faUserPlus)
 library.add(faUserTimes)
 library.add(faUserCheck)
+library.add(faPaperPlane)
 
 
 

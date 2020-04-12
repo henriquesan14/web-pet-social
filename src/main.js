@@ -9,6 +9,7 @@ import './includes/vuelidate';
 import './includes/loading';
 import './includes/toasted';
 import './includes/fontawesome';
+import './includes/ws'
 
 Vue.config.productionTip = false;
 

@@ -8,7 +8,7 @@
           <li @click="navigate('amizades')">
             <font-awesome-icon icon="user-friends" />
           </li>
-          <li @click="navigate('amizades')">
+          <li @click="navigate('chat')">
             <font-awesome-icon icon="comments" />
           </li>
           <li @click="navigate('amizades')">
@@ -60,6 +60,14 @@ export default {
     BarSearchPet
   },
   computed: mapGetters(['auth', 'userAvatar', 'userName']),
+  sockets: {
+      connect: function () {
+          console.log('socket connected')
+      },
+      customEmit: function () {
+          console.log('this method was fired by the socket server. eg: io.emit("customEmit", data)')
+      }
+  },
   methods: {
     logout(){
       this.$store.dispatch('RESET_AUTH');

@@ -20,7 +20,7 @@
         <div v-if="!loading">
             <CardPost :post="post" v-for="post in posts" :key="post.id"></CardPost>
         </div>
-        <h5 class="text-center">Nenhuma publicação...</h5>
+        <h5 v-if="posts.length <= 0" class="text-center">Nenhuma publicação...</h5>
         <Loading :loader="loading"/>
     </div>
 </template>
